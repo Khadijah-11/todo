@@ -23,5 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
             input.value = '';
         }
     });
+    // handle checkbox click
+    taskList.addEventListener('change', function(event) {
+        if (event.target.type === 'checkbox') {
+            const listItem = event.target.parentElement; 
+            if (event.target.checked) {
+                listItem.classList.add('checked');
+            } else {
+                listItem.classList.remove('checked');
+            }
+        }
+    });
+
 });
 
