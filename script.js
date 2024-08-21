@@ -34,6 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+    // delete task
+    taskList.addEventListener('click', function(event) {
+        if (event.target.classList.contains('bi-trash') ) {
+            const listItem = event.target.parentElement.parentElement;
+            listItem.remove();
+            
+        }
+    });
 
 });
 
