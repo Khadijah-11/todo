@@ -23,5 +23,25 @@ document.addEventListener('DOMContentLoaded', () => {
             input.value = '';
         }
     });
+    // handle checkbox click
+    taskList.addEventListener('change', function(event) {
+        if (event.target.type === 'checkbox') {
+            const listItem = event.target.parentElement; 
+            if (event.target.checked) {
+                listItem.classList.add('checked');
+            } else {
+                listItem.classList.remove('checked');
+            }
+        }
+    });
+    // delete task
+    taskList.addEventListener('click', function(event) {
+        if (event.target.classList.contains('bi-trash') ) {
+            const listItem = event.target.parentElement.parentElement;
+            listItem.remove();
+            
+        }
+    });
+
 });
 
